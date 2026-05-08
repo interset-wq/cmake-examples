@@ -1,25 +1,25 @@
 // A simple program that computes the square root of a number
 #include <cmath>
 #include <iostream>
-#include <string>
+#include <string> // stod(), string to double
 
-// TODO8: Include the MathFunctions header
 #include <MathFunctions.h>
 
+using namespace std;
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-  if (argc < 2) {
-    std::cout << "Usage: " << argv[0] << " number" << std::endl;
-    return 1;
+  if (argc < 2)
+  {
+    cout << "Usage: " << argv[0] << " number" << "\n";
+    return 1; // 1 error
   }
 
   // convert input to double
-  double const inputValue = std::stod(argv[1]);
+  const double inputValue = stod(argv[1]);
 
-  // TODO9: Use the mathfunctions::sqrt function
   // calculate square root
-  double const outputValue = mathfunctions::sqrt(inputValue);
-  std::cout << "The square root of " << inputValue << " is " << outputValue
-            << std::endl;
+  const double outputValue = mathfunctions::sqrt(inputValue);
+  cout << "The square root of " << inputValue << " is " << outputValue << "\n";
+  return 0; // 0 error
 }

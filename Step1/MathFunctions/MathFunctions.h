@@ -1,5 +1,7 @@
 #pragma once
 
-namespace mathfunctions {
-double sqrt(double x);
+// 函数原型
+namespace mathfunctions
+{
+  double sqrt(double x);
 }
