@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
   if (argc < 2)
   {
-    cout << "Usage: " << argv[0] << " number" << "\n";
+    cout << "Usage: " << argv[0] << " number" << '\n';
     return 1; // 1 error
   }
 
@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
 
   // calculate square root
   const double outputValue = mathfunctions::sqrt(inputValue);
-  cout << "The square root of " << inputValue << " is " << outputValue << "\n";
+  cout << "The square root of " << inputValue << " is " << outputValue << '\n';
   return 0; // 0 error
 }

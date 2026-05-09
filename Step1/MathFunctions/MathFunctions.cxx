@@ -1,9 +1,10 @@
-#include <iostream>
+﻿#include <iostream>
 
 // 匿名命名空间，私有函数
 namespace
 {
   // a hack square root calculation using simple operations
+  // 牛顿迭代法求平方根
   double mysqrt(double x)
   {
     if (x <= 0)
@@ -22,7 +23,7 @@ namespace
       }
       double delta = x - (result * result);
       result = result + 0.5 * delta / result;
-      std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
+      std::cout << "Computing sqrt of " << x << " to be " << result << '\n';
     }
     return result;
   }
