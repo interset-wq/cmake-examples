@@ -33,6 +33,7 @@ endforeach()
 ##################
 
 # Compare with C, `main.c`
+# Compare with C++, `main.cpp`
 
 macro(MyMacro MacroArgument)
     message("${MacroArgument}\n\t\tFrom Macro")

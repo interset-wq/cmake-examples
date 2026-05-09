@@ -1,20 +1,40 @@
+############
+# Solution #
+############
+
 cmake_minimum_required(VERSION 3.23)
 
-
-# TODO1: Implement MacroAppend
+# `${ListVar}` variable name
+# `${${ListVar}}` variable value
 macro(MacroAppend ListVar Value)
-
+  set(${ListVar} "${${ListVar}};${Value}")
 endmacro()
 
-# TODO2: Call MacroAppend, then return the value from FuncAppend
-function(FuncAppend ListVar Value)
 
+# Func has its own scope, it cannot change var glabally
+# We should reset the var via `PARENT_SCOPE`
+function(FuncAppend ListVar Value)
+  MacroAppend(${ListVar} ${Value})
+  set(${ListVar} "${${ListVar}}" PARENT_SCOPE) 
 endfunction()
 
 
+set(MyList "a;b;c")
+message("MyList: ${MyList}")    # MyList: a;b;c
+
+FuncAppend(MyList "d")      
+message("MyList: ${MyList}")    # MyList: a;b;c;d
+
+MacroAppend(MyList "e")
+message("MyList: ${MyList}")    # MyList: a;b;c;d;e
+
+
+########
+# Test #
+########
 
 # Testing for the above, final expected value is "Alpha;Beta;Gamma;Delta"
-if(SKIP_TESTS)
+if(SKIP_TESTS)    # SKIP_TESTS undefined, it will be Falsy
   return()
 endif()
 

@@ -27,7 +27,7 @@ The executable file(target) will be placed on `build/Debug/`
 cmake --build build --clean-first
 ```
 
-## CMakeLang
+## CMakeLang & `.cmake`
 
 ### Run the script
 
@@ -35,7 +35,7 @@ cmake --build build --clean-first
 cmake -P CMakeLists.txt
 ```
 
-`cmake -P` script mode
+`cmake -P` script mode, CMakeLang scripts always end with `.camke`
 
 ### True and False
 
