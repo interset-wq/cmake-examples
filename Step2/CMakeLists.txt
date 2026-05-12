@@ -44,3 +44,30 @@ function(MyFunc FuncArgument)
 endfunction()
 
 MyFunc("From TopLevel")
+
+
+#############
+# Condition #
+#############
+cmake_policy(SET CMP0012 NEW) # 自动识别TRUE等布尔常量
+
+# True是布尔常量(不考虑大小写)
+if (True) 
+    message("Constant Value: True")
+else()
+    message("Constant Value: False")
+endif()
+
+# 未定义变量(默认为FALSE)
+if (ConditonalValue) 
+    message("Undefined Value: True")
+else()
+    message("Undefined Value: False")
+endif()
+
+set(ConditonalValue True)
+if (ConditonalValue) 
+    message("Undefined Value: True")
+else()
+    message("Undefined Value: False")
+endif()

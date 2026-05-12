@@ -6,13 +6,15 @@ cmake_minimum_required(VERSION 3.23)
 
 # `${ListVar}` variable name
 # `${${ListVar}}` variable value
-macro(MacroAppend ListVar Value)
+#     宏名        参数一  参数二
+macro(MacroAppend ListVar Value) # 追加Value元素到列表ListVar
   set(${ListVar} "${${ListVar}};${Value}")
 endmacro()
 
 
 # Func has its own scope, it cannot change var glabally
 # We should reset the var via `PARENT_SCOPE`
+#        函数名      参数一  参数二
 function(FuncAppend ListVar Value)
   MacroAppend(${ListVar} ${Value})
   set(${ListVar} "${${ListVar}}" PARENT_SCOPE) 

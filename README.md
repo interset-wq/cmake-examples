@@ -2,8 +2,11 @@
 
 > [!NOTE]
 > MSVC don't support Chinese characters.
+> 
 > warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+> 
 > In order to solve it, we should save files using `UTF8 with BOM`
+
 
 ## Build
 
@@ -56,3 +59,15 @@ All of cmake variable is string like Bash.
   - empty string
 
 Recommand using `True/False` or `On/off` as boolean.
+
+### string
+
+- cmake中一切都是字符串，因此cmake变量可以省略双引号。
+- 字符串中有空格时需要使用双引号包裹，否则会被识别为列表
+
+### 比较运算符和逻辑运算符
+
+- `STREQUAL` 比较字符串相等
+- `DEFINED` 变量是否有定义
+- `MATCHES` 包含
+- 逻辑运算符 `AND` `OR` `NOT`
