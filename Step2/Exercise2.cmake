@@ -6,13 +6,13 @@ cmake_minimum_required(VERSION 3.23)
 
 
 function(FilterFoo OutVar)
-
+  # ARGN是第一个参数之后的所有参数
   foreach(item IN LISTS ARGN)
     if(item MATCHES Foo)
       list(APPEND ${OutVar} ${item})
     endif()
   endforeach()
-
+  # 修改外部作用域的变量值
   set(${OutVar} ${${OutVar}} PARENT_SCOPE)
 endfunction()
 

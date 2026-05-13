@@ -3,6 +3,9 @@
 #include <string>
 using namespace std;
 
+/**
+ * Solution
+ */
 // ListVar is a vector<string>
 // Value is a string
 #define MacroAppend(ListVar, Value) ListVar.push_back(Value)
@@ -12,6 +15,9 @@ void FuncAppend(vector<string> &ListVar, string Value)
     MacroAppend(ListVar, Value);
 }
 
+/**
+ * Test
+ */
 void print_vector(string s, const vector<string> &v)
 {   
     if (s != "")
